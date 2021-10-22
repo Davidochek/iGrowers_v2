@@ -31,7 +31,7 @@
             </div>
             <div class="filter-title">
                 <div class="title-header">
-                    <h2 style="color:#fff;">iGrowers Infohub</h2>
+                    <h2 style="color:#fff;">iGrowers Farmers Information Hub</h2>
                     <p class="lead">Lorem Ipsum is simply dummy text of the printing and typesetting industry.  </p>
                 </div>
             </div>
@@ -42,9 +42,7 @@
                     <div class="container">
                         <div class="row">
                             <div class="titles">
-                                <h2>iGrowers Infohub <span>Choice</span> of Services</h2>
-                                <i class="fa fa-plane"></i>
-                                <hr class="tall">
+                                <h2>iGrowers Infohub Choice of Services</h2>
                             </div>
                         </div>
                         <div class="portfolioContainer" style="margin-top: -50px;">

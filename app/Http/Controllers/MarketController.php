@@ -27,6 +27,10 @@ class MarketController extends Controller
         //
     }
 
+    public function marketdetails()
+    {
+        return view('crops.marketdetails');
+    }
     /**
      * Store a newly created resource in storage.
      *

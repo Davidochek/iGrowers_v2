@@ -64,6 +64,25 @@
                     </div>
                 </div>
             </div>
+            <div class="opacy_bg_02 padding-bottom">
+                    <div class="container wow fadeInUp">
+                        <div class="row text-center">
+                            <div class="col-md-12">
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="titles">
+                                            <h2>Market Reports</h2>
+                                        </div>
+                                    </div>
+                                </div>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut id neque ultrices, pretium mauris id, pharetra lacus. Suspendisse elementum et felis in mollis. Quisque nec porttitor diam, sed tincidunt quam. Aliquam lacinia nisl non lobortis ornare. Nam dapibus dui id lacus condimentum facilisis. Sed bibendum mi at ornare venenatis. </p>
+                                <div class="row text-center padding-top-mini">
+                                    <a href="{{ route('marketdetails') }}" class="btn btn-primary">View Details</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 </section>
 
 @endsection
