@@ -1,6 +1,69 @@
 @extends('layouts.admin')
 @section('content')
 
-Hello world
+<div class="section-title-01 honmob">
+	<div class="bg_parallax image_01_parallax"></div>
+	<div class="opacy_bg_02">
+		<div class="container">
+			<h1>Market</h1>
+		</div>
+	</div>
+</div>
+<section class="content-central">
+	 <div class="content_info">
+                <div class="paddings">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h3>Farmer Crop for Marketing</h3>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut id neque ultrices, pretium mauris id, pharetra lacus. Suspendisse elementum et felis in mollis.</p>
+                                <h3>To be registered you will be requested to share the following details</h3>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <ul class="list-styles">
+                                            <li><i class="fa fa-check"></i> <a href="#">Variety to be planted</a></li>
+                                            <li><i class="fa fa-check"></i> <a href="#">Expected start harvest </a></li>
+                                            <li><i class="fa fa-check"></i> <a href="#">Planted acreage</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="thinborder-ontop">
+                                <h3>Please Register Here</h3>
+                                <form id="userregisterationform">                                    
+                                    <div class="form-group row">
+                                        <label for="name" class="col-md-4 col-form-label text-md-right">Name</label>
+                                        <div class="col-md-6">
+                                            <input id="name" type="text" class="form-control" name="name" value="" required="" autofocus="">
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label for="email" class="col-md-4 col-form-label text-md-right">E-Mail Address</label>
+                                        <div class="col-md-6">
+                                            <input id="email" type="email" class="form-control" name="email" value="" required="">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group row">
+                                        <label for="phone" class="col-md-4 col-form-label text-md-right">Phone</label>
+                                        <div class="col-md-6">
+                                            <input id="phone" type="text" class="form-control" name="phone" value="" required="" autofocus="">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group row mb-0">
+                                        <div class="col-md-10">
+                                            <button type="submit" class="btn btn-primary pull-right">Register</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+</section>
 
 @endsection

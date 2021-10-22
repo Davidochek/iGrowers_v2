@@ -36,13 +36,13 @@ p.lead .line,
 .filter-header,
 .profilebackground,
 .filter-header input[type="button"]{
-	background: #0a3d62 !important; 
-	background-color: #0a3d62 !important; 
+	background: #66BB6A !important; 
+	background-color: #66BB6A !important; 
 }
 .opacy_bg_03,
 .item-team-01 .info-team,
 .header-detailed{
-	background: #0a3d62;  
+	background: #66BB6A;  
 	background: rgba(136, 196, 37, 0.6);
 }
 
@@ -87,7 +87,7 @@ blockquote > a,
 .pagination > li > a, .pagination > li > span,
 address i,
 address a{
-	color: #0a3d62;
+	color: #66BB6A;
 }
 
 /* Borders ----------------------------------------------------------*/
@@ -101,20 +101,20 @@ address a{
 .post-format-icon > i,
 .section-title-03 h1,
 .title-widget{
-	border-color: #0a3d62 !important;
+	border-color: #66BB6A !important;
 }
 .crumbs:before{
-	border-bottom: 20px solid #0a3d62;
+	border-bottom: 20px solid #66BB6A;
 }
 .tooltip.top .tooltip-arrow {
-  border-top-color: #0a3d62;
+  border-top-color: #66BB6A;
 }
 .flat-mega-menu .drop-down,
 .flat-mega-menu .social-bar ul {
-	border-bottom-color: #0a3d62;
+	border-bottom-color: #66BB6A;
 }
 .nav-tabs li.active:after {
-	border: 16px solid #0a3d62;
+	border: 16px solid #66BB6A;
 	border-left-color: transparent;
 	border-right-color: transparent;
 	border-bottom-color: transparent;
@@ -125,21 +125,21 @@ address a{
 	z-index: 101;
 }
 .title-widget:after {
-  border-top: 15px solid  #0a3d62;
+  border-top: 15px solid  #66BB6A;
 }
 
 hr.separator::before {
-	background: #0a3d62;	
+	background: #66BB6A;	
 }
 #footer .fa{
 	color:#fff;
 }
 .footer-m {	
-	border-top: 2px solid #0a3d62;	
+	border-top: 2px solid #66BB6A;	
 }
 
 .footer-m ul li a .fa {
-	color: #0a3d62 !important;
+	color: #66BB6A !important;
 }
 
  .crumbs ul{
