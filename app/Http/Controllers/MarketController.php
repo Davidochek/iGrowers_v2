@@ -39,7 +39,14 @@ class MarketController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'name' => 'required',
+            'phone' => 'required | unique:farmers',
+            'email' => 'email | required',
+        ]);
+
+        Market::create($request->all());
+        return redirect('/market')->with('success', 'Added Successfully');
     }
 
     /**

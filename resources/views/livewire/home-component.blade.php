@@ -87,7 +87,7 @@
                             </div>
                             <div class="col-xs-6 col-sm-4 col-md-3 hsgrids"
                                 style="padding-right: 5px;padding-left: 5px;">
-                                <a class="g-list" href="{{ route('market') }}">
+                                <a class="g-list" href="{{ route('market.index') }}">
                                     <div class="img-hover">
                                         <img src="{{asset('assets/img/crops/market.jpg')}}" alt="AC Gas Refill"
                                             class="img-responsive">

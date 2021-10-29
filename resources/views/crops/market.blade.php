@@ -10,6 +10,26 @@
 	</div>
 </div>
 <section class="content-central">
+	@if ($errors->any())
+	<div class="alert alert-dismissible alert-danger">
+		<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+		<strong>Whoops!</strong> There was a problem with you input. <br>
+		<ul>
+			@foreach ($errors->all() as $error)
+				<li>{{$error}}</li>
+			@endforeach
+		</ul>
+	</div>
+	@elseif($message = Session::get('success'))
+	<div class="alert alert-success alert-dismissible">
+<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+		<p>{{$message}}</p>
+	</div>
+@endif
 	 <div class="content_info">
                 <div class="paddings">
                     <div class="container">
@@ -31,7 +51,7 @@
                             <div class="col-md-6">
                                 <div class="thinborder-ontop">
                                 <h3>Please Register Here</h3>
-                                <form id="userregisterationform">                                    
+                                <form id="userregisterationform" action="{{ route('market.store') }}" method="POST">        @csrf               
                                     <div class="form-group row">
                                         <label for="name" class="col-md-4 col-form-label text-md-right">Name</label>
                                         <div class="col-md-6">
@@ -41,7 +61,7 @@
                                     <div class="form-group row">
                                         <label for="email" class="col-md-4 col-form-label text-md-right">E-Mail Address</label>
                                         <div class="col-md-6">
-                                            <input id="email" type="email" class="form-control" name="email" value="" required="">
+                                            <input id="email" type="email" class="form-control" name="email">
                                         </div>
                                     </div>
 

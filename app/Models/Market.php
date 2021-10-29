@@ -7,5 +7,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class Market extends Model
 {
-    use HasFactory;
+	use HasFactory;
+
+	protected $table = 'farmers';
+
+	protected $fillable = [
+		'name', 'email', 'phone'
+	];
 }

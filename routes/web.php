@@ -26,7 +26,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', HomeComponent::class)->name('home');
 Route::get('/pests', [PestsController::class, 'index'])->name('pests');
 Route::get('/diseases', [DiseasesController::class, 'index'])->name('diseases');
-Route::get('/market', [MarketController::class, 'index'])->name('market');
+// Route::get('/market', [MarketController::class, 'index'])->name('market');
 Route::get('/marketdetails', [MarketController::class, 'marketdetails'])->name('marketdetails');
 Route::get('/services', [ServicesController::class, 'index'])->name('services');
 Route::get('/autocomplete', [SearchController::class, 'autocomplete'])->name('autocomplete');
@@ -37,3 +37,4 @@ Route::get('/showDiseases/{disease_slug}', [SearchController::class, 'showDiseas
 Route::get('/showPestDetails/{id}', [SearchController::class, 'showPestDetails'])->name('showPestDetails');
 Route::get('/showDiseaseDetails/{id}', [SearchController::class, 'showDiseaseDetails'])->name('showDiseaseDetails');
 Route::get('/searchPests', [SearchController::class, 'searchPests'])->name('searchPests');
+Route::resource('/market', MarketController::class);
