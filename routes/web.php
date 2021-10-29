@@ -37,4 +37,7 @@ Route::get('/showDiseases/{disease_slug}', [SearchController::class, 'showDiseas
 Route::get('/showPestDetails/{id}', [SearchController::class, 'showPestDetails'])->name('showPestDetails');
 Route::get('/showDiseaseDetails/{id}', [SearchController::class, 'showDiseaseDetails'])->name('showDiseaseDetails');
 Route::get('/searchPests', [SearchController::class, 'searchPests'])->name('searchPests');
-Route::resource('/market', MarketController::class);
+// Route::resource('/market', MarketController::class);
+Route::resource('/market', MarketController::class, [
+    'only' => ['index', 'store']
+]);

@@ -46,7 +46,7 @@ class MarketController extends Controller
         ]);
 
         Market::create($request->all());
-        return redirect('/market')->with('success', 'Added Successfully');
+        return redirect('market')->with('success', 'Added Successfully');
     }
 
     /**
