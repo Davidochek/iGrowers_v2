@@ -18,6 +18,16 @@ return [
         'passwords' => 'users',
     ],
 
+   'buyer' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\Buyer::class,
+    ],
+
+    'admin' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\Admin::class,
+    ],
+
     /*
     |--------------------------------------------------------------------------
     | Authentication Guards
@@ -39,6 +49,15 @@ return [
         'web' => [
             'driver' => 'session',
             'provider' => 'users',
+        ],
+        'buyer' => [
+            'driver' => 'session',
+            'provider' => 'buyers',
+        ],
+
+        'admin' => [
+            'driver' => 'session',
+            'provider' => 'admins',
         ],
     ],
 
@@ -65,10 +84,21 @@ return [
             'model' => App\Models\User::class,
         ],
 
+
         // 'users' => [
         //     'driver' => 'database',
         //     'table' => 'users',
         // ],
+        
+       'buyers' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\Buyer::class,
+        ],
+
+        'admins' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\Admin::class,
+        ],
     ],
 
     /*
@@ -92,6 +122,16 @@ return [
             'table' => 'password_resets',
             'expire' => 60,
             'throttle' => 60,
+        ],
+
+        'buyers' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\Buyer::class,
+        ],
+
+        'admins' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\Admin::class,
         ],
     ],
 

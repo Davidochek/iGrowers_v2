@@ -18,6 +18,7 @@
     <script type="text/javascript" src="{{asset('assets/js/jquery-ui.1.10.4.min.js')}}"></script>
     <script type="text/javascript" src="{{asset('assets/js/toastr.min.js')}}"></script>
     <script type="text/javascript" src="{{asset('assets/js/modernizr.js')}}"></script>
+    @yield('header')
 </head>
 <body>
     <div id="layout">
@@ -36,14 +37,14 @@
             </nav>
         </header>
         @yield('content')
-        <footer id="footer" class="footer-v1">
+        <footer class="footer-v1">
             <div class="footer-down">
                 <div class="container">
                     <div class="row">
                         <div class="col-md-6">
+                            <p class="text-xs-center crtext">&copy; 2021 iGrowers. All Rights Reserved.</p>
                         </div>
                         <div class="col-md-6">
-                            <p class="text-xs-center crtext">&copy; 2021 iGrowers. All Rights Reserved.</p>
                         </div>
                     </div>
                 </div>                

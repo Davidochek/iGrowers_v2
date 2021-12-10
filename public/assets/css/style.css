@@ -1975,7 +1975,7 @@ hr.separator:before {
 
 /* Footer V-1 ----------------------------------------------------------------*/
 .footer-v1{
-	background-color: #252C2E;
+	background-color: #ddd;
 }
 .footer-v1 h3,
 .footer-v1 ul li a:hover,
@@ -1984,7 +1984,7 @@ hr.separator:before {
 }
 .footer-v1 ul li a,
 .footer-v1 p{
-	color: #ddd;
+	color: #252C2E;
 }
 .footer-v1 .divisor{
 	background-color: #363636;
