@@ -14,7 +14,8 @@ class ServicesController extends Controller
      */
     public function index()
     {
-        return view('crops.services');
+         $services = Services::latest()->paginate(5);
+        return view('crops.services', compact('services'))->with('i', (request()->input('page', 1) - 1) * 5);
     }
 
     /**
@@ -27,6 +28,29 @@ class ServicesController extends Controller
         //
     }
 
+    public function create_service(Request $request) {
+         $request->validate([
+            'name' => 'required',
+            'details' => 'required',
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+        ]);
+  
+        $input = $request->all();
+
+        if ($image = $request->file('image')) {
+            $destinationPath = 'image/';
+            $profileImage = date('YmdHis') . "." . $image->getClientOriginalExtension();
+            $image->move($destinationPath, $profileImage);
+            $input['image'] = "$profileImage";
+        }
+
+        Services::create($input);
+     
+        return redirect()->route('superusers.register_service')
+                        ->with('success','Service created successfully.');
+
+    }
+
     /**
      * Store a newly created resource in storage.
      *
@@ -35,8 +59,9 @@ class ServicesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+       //
     }
+
 
     /**
      * Display the specified resource.
@@ -44,9 +69,10 @@ class ServicesController extends Controller
      * @param  \App\Models\Services  $services
      * @return \Illuminate\Http\Response
      */
-    public function show(Services $services)
+    public function show($id)
     {
-        //
+        $details = Services::find($id);
+        return $details;
     }
 
     /**

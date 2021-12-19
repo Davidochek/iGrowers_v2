@@ -30,6 +30,10 @@ class RedirectIfAuthenticated
                 if ($guard === 'admin') {
                     return redirect()->route('admins.home');
                 }
+
+                if ($guard === 'superuser') {
+                    return redirect()->route('superusers.home');
+                }
                 return redirect(RouteServiceProvider::HOME);
             }
         }

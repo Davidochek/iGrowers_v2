@@ -74,7 +74,7 @@
                             </div>
                             <div class="col-xs-6 col-sm-4 col-md-3 hsgrids"
                                 style="padding-right: 5px;padding-left: 5px;">
-                                <a class="g-list" href="{{ route('services') }}">
+                                <a class="g-list" href="{{ route('services.index') }}">
                                     <div class="img-hover">
                                         <img src="{{asset('assets/img/crops/services.jpg')}}" alt="AC Gas Top Up"
                                             class="img-responsive">
