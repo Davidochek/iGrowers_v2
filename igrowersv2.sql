@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 06, 2021 at 03:33 PM
+-- Generation Time: Dec 22, 2021 at 03:35 PM
 -- Server version: 10.4.13-MariaDB
 -- PHP Version: 7.4.8
 
@@ -20,6 +20,58 @@ SET time_zone = "+00:00";
 --
 -- Database: `igrowersv2`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `admins`
+--
+
+CREATE TABLE `admins` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `phone` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `group` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `email_verified_at` timestamp NULL DEFAULT NULL,
+  `password` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `remember_token` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `admins`
+--
+
+INSERT INTO `admins` (`id`, `name`, `phone`, `email`, `group`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
+(1, 'admin', '0727170890', 'admin@admin.com', 'Nairobi', NULL, '$2y$10$mp2ob2CXDI5dSRgvLG1.du2xSdKjz13hk8H3Rdhb0769ViJI9tcP2', NULL, '2021-11-24 06:25:21', '2021-11-24 06:25:21');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `buyers`
+--
+
+CREATE TABLE `buyers` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `phone` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `location` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `email_verified_at` timestamp NULL DEFAULT NULL,
+  `password` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `remember_token` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `buyers`
+--
+
+INSERT INTO `buyers` (`id`, `name`, `phone`, `email`, `location`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
+(1, 'Buyer', '0727170890', 'buyer@gmail.com', 'Nairobi', NULL, '$2y$10$chgLeKASqv4FGU55v1gokup.knm5o9AMXAm35j65.19vlWdhkyHaG', NULL, '2021-11-23 18:08:42', '2021-11-23 18:08:42');
 
 -- --------------------------------------------------------
 
@@ -168,6 +220,51 @@ CREATE TABLE `failed_jobs` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `farmers`
+--
+
+CREATE TABLE `farmers` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `email` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `phone` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `crop` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `farmers`
+--
+
+INSERT INTO `farmers` (`id`, `name`, `email`, `phone`, `crop`, `created_at`, `updated_at`) VALUES
+(1, 'David Kiprono Chemochek', 'david@gmail.com', '0711439698', '', '2021-10-28 05:33:57', '2021-10-28 05:33:57'),
+(2, 'Paul Kyalo Mutunga', 'paul@gmail.com', '0721123456', '', '2021-10-28 05:40:30', '2021-10-28 05:40:30'),
+(3, 'David', 'admin@admin.com', '0727170890', '', '2021-10-28 05:41:19', '2021-10-28 05:41:19'),
+(4, 'Liz Kanja', 'liz@gmzil.com', '0712345678', '', '2021-10-28 07:54:46', '2021-10-28 07:54:46'),
+(5, 'INV6227', 'sales@duffengineering.co.ke', '0705587666', '', '2021-10-28 07:58:54', '2021-10-28 07:58:54'),
+(6, 'Bernard Rono', 'ben@gmail.com', '0727123456', '', '2021-10-28 08:01:40', '2021-10-28 08:01:40'),
+(7, 'John Doe', 'john@gmail.com', '0711234567', '', '2021-10-29 05:44:39', '2021-10-29 05:44:39'),
+(8, 'David', 'david2@gmail.com', '0720987654', '', '2021-10-29 07:43:42', '2021-10-29 07:43:42'),
+(9, 'Degree', 'degree@gmail.com', '0765143211', '', '2021-10-29 07:50:31', '2021-10-29 07:50:31'),
+(10, 'INV6227', 'sales@duffengineering.co.ke', '0705587667', '', '2021-10-29 07:51:52', '2021-10-29 07:51:52'),
+(11, 'Nash', 'new@gmail.com', '0756432789', '', '2021-10-29 08:00:55', '2021-10-29 08:00:55'),
+(12, 'David Kiprono Chemochek', 'chemochek@gmail.com', '0711439697', '', '2021-10-29 08:38:12', '2021-10-29 08:38:12'),
+(13, 'Lizz', 'liz@gmzil.com', '0723455445', '', '2021-10-29 08:53:20', '2021-10-29 08:53:20'),
+(14, 'INV6227', 'sales@duffengineering.co.ke', '0705587678', '', '2021-10-29 09:23:36', '2021-10-29 09:23:36'),
+(15, 'David Kiprono Chemochek', 'davidkiprono4@gmail.com', '0757898820', '', '2021-10-29 09:27:13', '2021-10-29 09:27:13'),
+(16, 'David Kiprono Chemochek', 'davidkiprono4@gmail.com', '0757898824', '', '2021-10-29 09:29:15', '2021-10-29 09:29:15'),
+(17, 'David', 'davidkiprono4@gmail.com', '0757898825', '', '2021-10-29 09:29:44', '2021-10-29 09:29:44'),
+(18, 'David Kiprono Chemochek', 'davidkiprono4@gmail.com', '0757898826', '', '2021-10-29 09:30:02', '2021-10-29 09:30:02'),
+(19, 'David Kiprono Chemochek', 'davidkiprono4@gmail.com', '0757898827', '', '2021-10-29 09:30:20', '2021-10-29 09:30:20'),
+(20, 'Chemochek', 'davidkiprono4@gmail.com', '0711223344', '', '2021-10-29 09:45:07', '2021-10-29 09:45:07'),
+(21, 'INV6227', 'sales@duffengineering.co.ke', '0705581266', '', '2021-10-29 10:39:30', '2021-10-29 10:39:30'),
+(22, 'Morris', 'sales@duffengineering.co.ke', '0790722501', '', '2021-12-16 05:59:37', '2021-12-16 05:59:37'),
+(23, 'Stacy', NULL, '0789123456', 'Avocado', '2021-12-22 11:29:23', '2021-12-22 11:29:23');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `markets`
 --
 
@@ -204,7 +301,43 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (8, '2021_09_24_141130_create_services_table', 1),
 (9, '2021_09_26_191150_create_crops_table', 1),
 (10, '2021_09_26_192045_create_pests_crop_table', 1),
-(11, '2021_09_26_194105_create_diseases_crop_table', 2);
+(11, '2021_09_26_194105_create_diseases_crop_table', 2),
+(12, '2021_10_28_075528_create_farmers_table', 3),
+(13, '2021_11_22_120008_create_buyers_table', 4),
+(14, '2021_11_24_082130_create_admins_table', 5),
+(15, '2021_12_14_102731_create_superusers_table', 6),
+(16, '2021_12_14_220759_create_services_table', 7),
+(17, '2021_12_19_061412_create_sproviders_table', 8),
+(18, '2021_12_19_071008_create_services_table', 9),
+(19, '2021_12_22_082249_create_orders_table', 10);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `orders`
+--
+
+CREATE TABLE `orders` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `bid` int(11) NOT NULL,
+  `sname` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `spid` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `fname` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `fphone` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `flocation` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `date` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `orders`
+--
+
+INSERT INTO `orders` (`id`, `bid`, `sname`, `spid`, `fname`, `fphone`, `flocation`, `date`, `created_at`, `updated_at`) VALUES
+(1, 2, 'Soil Testing', '4', 'John', '0711439698', 'Eldoret', '2021-12-11', '2021-12-22 07:15:29', '2021-12-22 07:15:29'),
+(2, 1, 'AI', '4', 'Rose', '0711345678', 'Nairobi', '2021-12-31', '2021-12-22 08:09:02', '2021-12-22 08:09:02'),
+(3, 1, 'AI', '4', 'David', '0711439698', 'Industrial Area', '2021-12-25', '2021-12-22 08:45:57', '2021-12-22 08:45:57');
 
 -- --------------------------------------------------------
 
@@ -283,9 +416,83 @@ INSERT INTO `pests` (`id`, `name`, `common_name`, `scientific_name`, `family`, `
 
 CREATE TABLE `services` (
   `id` bigint(20) UNSIGNED NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `details` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `image` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `location` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `contact_person` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `phone` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `email` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `status` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `services`
+--
+
+INSERT INTO `services` (`id`, `user_id`, `name`, `details`, `image`, `location`, `contact_person`, `phone`, `email`, `status`, `created_at`, `updated_at`) VALUES
+(1, 4, 'AI', 'Test Details', '20211220215449.jpeg', 'Nairobi, Industrial Area', 'Morris', '0790722501', 'sales@duffengineering.co.ke', NULL, '2021-12-20 18:44:21', '2021-12-22 03:56:57'),
+(2, 4, 'Soil Testing', 'Soil testing details', '20211220215449.jpeg', 'Nairobi', 'David', '0790722501', 'sales@duffengineering.co.ke', NULL, '2021-12-20 18:54:49', '2021-12-22 03:45:03'),
+(3, 4, 'Crop Monitoring Services', 'Based on satellite images, Crop Monitoring helps farmers to manage multiple fields, cut costs on resources and take reliable decisions.', '20211222120835.jpg', 'Nairobi, Industrial Area', 'Morris', '0790722501', 'sales@duffengineering.co.ke', 'approved', '2021-12-22 09:08:35', '2021-12-22 09:08:35'),
+(4, 4, 'Soil Testing', 'Cropnuts (or Crop Nutrition Laboratory Services Ltd) is a private company that offers laboratory analytics and expert agricultural advice in Africa.', '20211222121014.jpg', 'Nairobi, Industrial Area', 'Morris', '0790722501', 'sales@duffengineering.co.ke', 'approved', '2021-12-22 09:10:14', '2021-12-22 09:10:14'),
+(5, 4, 'Farm Equipment Products', 'Farming Vehicles; 1. Tractors; 2. Combine or Harvester; 3. ATV or UTV; Tractor Attachments; 1. Plows; 2. Harrows;', '20211222121116.jpg', 'Nairobi, Industrial Area', 'Morris', '0790722501', 'sales@duffengineering.co.ke', 'approved', '2021-12-22 09:11:16', '2021-12-22 09:11:16'),
+(6, 4, 'Irrigation Services', 'Netafim is the global leader in irrigation solutions for a sustainable agriculture. Since introducing the world\'s first drip irrigation system in 1966', '20211222121222.jpg', 'Nairobi, Industrial Area', 'Morris', '0790722501', 'sales@duffengineering.co.ke', 'approved', '2021-12-22 09:12:22', '2021-12-22 09:12:22');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `sproviders`
+--
+
+CREATE TABLE `sproviders` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `phone` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `location` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `email_verified_at` timestamp NULL DEFAULT NULL,
+  `password` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `remember_token` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `sproviders`
+--
+
+INSERT INTO `sproviders` (`id`, `name`, `phone`, `email`, `location`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
+(1, 'David Kiprono Chemochek', '0727170890', 'admin@admin.com', 'Nairobi, Industrial Area', NULL, '$2y$10$lUa9S7EqwQj3h3G928DIyurIV6p10/bFGvzFe6/KPjzLOqwfEW/86', NULL, '2021-12-20 09:15:36', '2021-12-20 09:15:36');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `superusers`
+--
+
+CREATE TABLE `superusers` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `phone` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `group` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `email_verified_at` timestamp NULL DEFAULT NULL,
+  `password` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `remember_token` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `superusers`
+--
+
+INSERT INTO `superusers` (`id`, `name`, `phone`, `email`, `group`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
+(1, 'INV6227', '0705587666', 'sales@duffengineering.co.ke', 'Main', NULL, '$2y$10$J/LzaD.mlalJQ759PScKuenp2uyPArVK.SE9i5.oUuCqDF/nUwuwi', NULL, '2021-12-14 09:08:20', '2021-12-14 09:08:20'),
+(4, 'Admin', '0727170890', 'admin@admin.com', NULL, NULL, '$2y$10$k2d1pQpf9SN25SM8D4JOv.2zTSLdHgCfv2H2QTI/fIGGC50qBtQIq', NULL, '2021-12-14 09:24:50', '2021-12-14 09:24:50');
 
 -- --------------------------------------------------------
 
@@ -307,6 +514,23 @@ CREATE TABLE `users` (
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `admins`
+--
+ALTER TABLE `admins`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `admins_phone_unique` (`phone`),
+  ADD UNIQUE KEY `admins_email_unique` (`email`),
+  ADD UNIQUE KEY `admins_group_unique` (`group`);
+
+--
+-- Indexes for table `buyers`
+--
+ALTER TABLE `buyers`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `buyers_phone_unique` (`phone`),
+  ADD UNIQUE KEY `buyers_email_unique` (`email`);
 
 --
 -- Indexes for table `crops`
@@ -334,6 +558,13 @@ ALTER TABLE `failed_jobs`
   ADD UNIQUE KEY `failed_jobs_uuid_unique` (`uuid`);
 
 --
+-- Indexes for table `farmers`
+--
+ALTER TABLE `farmers`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `farmers_phone_unique` (`phone`);
+
+--
 -- Indexes for table `markets`
 --
 ALTER TABLE `markets`
@@ -343,6 +574,12 @@ ALTER TABLE `markets`
 -- Indexes for table `migrations`
 --
 ALTER TABLE `migrations`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `orders`
+--
+ALTER TABLE `orders`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -372,6 +609,23 @@ ALTER TABLE `services`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `sproviders`
+--
+ALTER TABLE `sproviders`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `sproviders_phone_unique` (`phone`),
+  ADD UNIQUE KEY `sproviders_email_unique` (`email`);
+
+--
+-- Indexes for table `superusers`
+--
+ALTER TABLE `superusers`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `superusers_phone_unique` (`phone`),
+  ADD UNIQUE KEY `superusers_email_unique` (`email`),
+  ADD UNIQUE KEY `superusers_group_unique` (`group`);
+
+--
 -- Indexes for table `users`
 --
 ALTER TABLE `users`
@@ -381,6 +635,18 @@ ALTER TABLE `users`
 --
 -- AUTO_INCREMENT for dumped tables
 --
+
+--
+-- AUTO_INCREMENT for table `admins`
+--
+ALTER TABLE `admins`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `buyers`
+--
+ALTER TABLE `buyers`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `crops`
@@ -407,6 +673,12 @@ ALTER TABLE `failed_jobs`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
+-- AUTO_INCREMENT for table `farmers`
+--
+ALTER TABLE `farmers`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+
+--
 -- AUTO_INCREMENT for table `markets`
 --
 ALTER TABLE `markets`
@@ -416,7 +688,13 @@ ALTER TABLE `markets`
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+
+--
+-- AUTO_INCREMENT for table `orders`
+--
+ALTER TABLE `orders`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `personal_access_tokens`
@@ -434,7 +712,19 @@ ALTER TABLE `pests`
 -- AUTO_INCREMENT for table `services`
 --
 ALTER TABLE `services`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
+-- AUTO_INCREMENT for table `sproviders`
+--
+ALTER TABLE `sproviders`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `superusers`
+--
+ALTER TABLE `superusers`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `users`

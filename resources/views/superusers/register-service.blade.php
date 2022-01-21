@@ -73,6 +73,18 @@
 									<div class="position-relative form-group"><label for="email" class="">Email</label><input name="email" id="email" type="email" class="form-control"></div>
 								</div>
 							</div>
+
+							<div class="form-row" hidden>
+								<div class="col-md-6">
+									<div class="position-relative form-group"><label for="user_id" class="">User_id</label><input name="user_id" value="{{Auth::user()->id}}" id="user_id" type="text" class="form-control">
+									</div>
+								</div>
+								<div class="col-md-6">
+									<div class="position-relative form-group"><label for="status" class="">Approve  </label>
+										<input type="checkbox" value="approved" class="toggle-checkbox" name="status" checked>
+									</div>
+								</div>
+							</div>
 							<button class="mt-2 btn btn-primary">Submit</button>
 						</form>
 					</div>

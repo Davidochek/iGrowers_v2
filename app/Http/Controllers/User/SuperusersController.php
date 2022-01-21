@@ -40,7 +40,7 @@ class SuperusersController extends Controller
     function check(Request $request){
     	//validate form Inputs	
     	$request->validate([
-    	'email'=>'required|email|exists:admins,email',
+    	'email'=>'required|email|exists:superusers,email',
     	'password'=>'required|min:5|max:30',
     ],[
     	'email.exists' => ' This email does not exist in the users lists',

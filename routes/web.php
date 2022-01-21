@@ -5,8 +5,10 @@ use App\Http\Controllers\MarketController;
 use App\Http\Controllers\PestsController;
 use App\Http\Controllers\SearchController;
 use App\Http\Controllers\ServicesController;
+use App\Http\Controllers\OrderController;
 use App\Http\Controllers\User\AdminsController;
 use App\Http\Controllers\User\SuperusersController;
+use App\Http\Controllers\User\SprovidersController;
 use App\Http\Controllers\User\BuyersController;
 use App\Http\Livewire\HomeComponent;
 use Illuminate\Support\Facades\Route;
@@ -43,6 +45,7 @@ Route::get('/showPestDetails/{id}', [SearchController::class, 'showPestDetails']
 Route::get('/showDiseaseDetails/{id}', [SearchController::class, 'showDiseaseDetails'])->name('showDiseaseDetails');
 Route::get('/searchPests', [SearchController::class, 'searchPests'])->name('searchPests');
 // Route::resource('/market', MarketController::class);
+Route::post('/create_orders', [OrderController::class, 'create_orders'])->name('create_orders');
 Route::resource('/services', ServicesController::class);
 Auth::routes();
 
@@ -84,6 +87,24 @@ Route::middleware(['auth:superuser', 'PreventBackHistory'])->group(function(){
 Route::view('/home', 'superusers.home')->name('home');
 Route::post('logout', [SuperusersController::class, 'logout'])->name('logout');
 Route::view('register_service', 'superusers.register-service')->name('register_service');
+Route::get('/all', [ServicesController::class, 'all'])->name('all');
+Route::get('/preview/{id}', [ServicesController::class, 'preview'])->name('preview');
+Route::post('/approve/{id}', [ServicesController::class, 'approve'])->name('approve');
+Route::post('create_service', [ServicesController::class, 'create_service'])->name('create_service');
+});
+});
+
+Route::prefix('sprovider')->name('sproviders.')->group(function(){
+Route::middleware(['guest:sprovider', 'PreventBackHistory'])->group(function(){
+Route::view('/login', 'sproviders.login')->name('login');
+Route::view('/register', 'sproviders.register')->name('register');
+Route::post('/create', [SprovidersController::class, 'create'])->name('create');
+Route::post('/check', [SprovidersController::class, 'check'])->name('check');
+});
+Route::middleware(['auth:sprovider', 'PreventBackHistory'])->group(function(){
+Route::view('/home', 'sproviders.home')->name('home');
+Route::post('logout', [SprovidersController::class, 'logout'])->name('logout');
+Route::view('register_service', 'sproviders.register-service')->name('register_service');
 Route::post('create_service', [ServicesController::class, 'create_service'])->name('create_service');
 });
 });

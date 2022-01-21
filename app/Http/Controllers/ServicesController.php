@@ -14,10 +14,28 @@ class ServicesController extends Controller
      */
     public function index()
     {
-         $services = Services::latest()->paginate(5);
-        return view('crops.services', compact('services'))->with('i', (request()->input('page', 1) - 1) * 5);
-    }
+       $services = Services::latest()->get();
+       return view('crops.services', compact('services'))->with('i', (request()->input('page', 1) - 1) * 5);
+   }
 
+
+   public function all(){
+    $services = Services::latest()->get();
+    return view('superusers.view-services', compact('services'));
+}
+
+   public function preview($id){
+    $service = Services::find($id);
+    return $service;
+}
+
+public function approve(Request $request,  $id){
+         $id = $request['id'];
+        $service = Services::findOrFail($id);
+        $service->update(['status' => $request['status']]);
+
+        return response()->json(['success' => ' Approved successfully!']);
+}
     /**
      * Show the form for creating a new resource.
      *
@@ -29,27 +47,27 @@ class ServicesController extends Controller
     }
 
     public function create_service(Request $request) {
-         $request->validate([
-            'name' => 'required',
-            'details' => 'required',
-            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-        ]);
-  
-        $input = $request->all();
+       $request->validate([
+        'name' => 'required',
+        'details' => 'required',
+        'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+    ]);
 
-        if ($image = $request->file('image')) {
-            $destinationPath = 'image/';
-            $profileImage = date('YmdHis') . "." . $image->getClientOriginalExtension();
-            $image->move($destinationPath, $profileImage);
-            $input['image'] = "$profileImage";
-        }
+       $input = $request->all();
 
-        Services::create($input);
-     
-        return redirect()->route('superusers.register_service')
-                        ->with('success','Service created successfully.');
-
+       if ($image = $request->file('image')) {
+        $destinationPath = 'image/';
+        $profileImage = date('YmdHis') . "." . $image->getClientOriginalExtension();
+        $image->move($destinationPath, $profileImage);
+        $input['image'] = "$profileImage";
     }
+
+    Services::create($input);
+
+    return redirect()->route('superusers.register_service')
+    ->with('success','Service created successfully.');
+
+}
 
     /**
      * Store a newly created resource in storage.

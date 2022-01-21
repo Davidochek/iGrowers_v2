@@ -33,6 +33,11 @@ return [
             'model' => App\Models\Superuser::class,
     ],
 
+    'sprovider' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\Sprovider::class,
+    ],
+
     /*
     |--------------------------------------------------------------------------
     | Authentication Guards
@@ -68,6 +73,11 @@ return [
         'superuser' => [
             'driver' => 'session',
             'provider' => 'superusers',
+        ],
+
+        'sprovider' => [
+            'driver' => 'session',
+            'provider' => 'sproviders',
         ],
     ],
 
@@ -114,6 +124,11 @@ return [
             'driver' => 'eloquent',
             'model' => App\Models\Superuser::class,
         ],
+
+        'sproviders' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\Sprovider::class,
+        ],
     ],
 
     /*
@@ -152,6 +167,11 @@ return [
         'superusers' => [
             'driver' => 'eloquent',
             'model' => App\Models\Superuser::class,
+        ],
+
+        'sproviders' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\Sprovider::class,
         ],
     ],
 

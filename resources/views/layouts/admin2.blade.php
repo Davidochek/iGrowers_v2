@@ -11,6 +11,9 @@
 	<meta name="description" content="This is an example dashboard created using build-in elements and components.">
 	<meta name="msapplication-tap-highlight" content="no">
 	<link href="{{ asset('./main.css') }}" rel="stylesheet">
+	<link href="{{ asset('./assets3/js/dataTables/dataTables.bootstrap.css') }}" rel="stylesheet" />
+	<!-- other Scripts -->
+	 <link href="{{asset('assets/css/style.css')}}" rel="stylesheet" media="screen">
 </head>
 <body>
 	<div class="app-container app-theme-white body-tabs-shadow fixed-header">
@@ -42,6 +45,18 @@
                         </div>
                     </div>
 		</div>
+    <!-- jQuery Js -->
+    <script src="{{ asset('./assets3/js/jquery-1.10.2.js') }}"></script>
+      <!-- Bootstrap Js -->
+    <script src="{{ asset('./assets3/js/bootstrap.min.js') }}"></script>
 		<script type="text/javascript" src="{{ asset('./assets2/scripts/main.js') }}"></script>
+		<script src="{{ asset('./assets3/js/dataTables/jquery.dataTables.js') }}"></script>
+    <script src="{{ asset('./assets3/js/dataTables/dataTables.bootstrap.js') }}"></script>
+        <script>
+            $(document).ready(function () {
+                $('#dataTables-example').dataTable();
+            });
+    </script>
+     @stack('scripts')
 	</body>
 	</html>

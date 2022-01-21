@@ -28,10 +28,10 @@
                                                     </a>
                                                 </li>
                                                 <li class="nav-item">
-                                                    <a href="#" class="nav-link">
+                                                    <a href="{{ route('superusers.all') }}" class="nav-link">
                                                         <i class="nav-link-icon lnr-book"></i>
                                                         <span>
-                                                            Another Link
+                                                            View Services
                                                         </span>
                                                     </a>
                                                 </li>
@@ -65,7 +65,9 @@
                             </div>    
                         </div>
                     </div>            
-                   {{-- content here   --}}
+                   <!-- content here   -->
+                   
+                   <!-- End content -->
                 </div>
-
+            </div>
 @endsection

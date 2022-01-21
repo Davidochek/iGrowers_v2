@@ -12,6 +12,6 @@ class Market extends Model
 	protected $table = 'farmers';
 
 	protected $fillable = [
-		'name', 'email', 'phone'
+		'name', 'email', 'phone', 'crop',
 	];
 }

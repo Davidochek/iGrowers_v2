@@ -19,14 +19,6 @@
     <script type="text/javascript" src="{{asset('assets/js/toastr.min.js')}}"></script>
     <script type="text/javascript" src="{{asset('assets/js/modernizr.js')}}"></script>
     @yield('header')
-    <style>
-        .modal {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-    </style>
 </head>
 <body>
     <div id="layout">

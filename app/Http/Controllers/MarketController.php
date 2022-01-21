@@ -42,8 +42,7 @@ class MarketController extends Controller
         $request->validate([
             'name' => 'required',
             'phone' => 'required | unique:farmers',
-            'email' => 'email | required',
-        ]);
+            'crop' => 'required'        ]);
 
         Market::create($request->all());
         return redirect('market')->with('success', 'Added Successfully');

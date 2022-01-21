@@ -36,7 +36,7 @@
                 <div class="title-header">
                     <h2 style="color:#fff;">iGrowers Farmers Information Hub</h2>
                     <p class="lead">Lorem Ipsum is simply dummy text of the printing and typesetting industry.  </p>
-                    <a href="{{ route('buyers.home') }}" class="btn btn-primary">Get Started</a>
+                    <a href="{{ route('home') }}" class="btn btn-primary">Get Started</a>
                 </div>
             </div>
         </section>
